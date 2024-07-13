@@ -1,0 +1,267 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.example</groupId>
+  <artifactId>java_mdfe</artifactId>
+  <version>3.0.0</version>
+  <packaging>jar</packaging>
+
+  <name>Java MDFe</name>
+  <url>http://github.com.br/PauloPenalva/Java_MDFe</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>8</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <axis2.version>1.7.5</axis2.version>
+    <jaxb2.version>2.3.1</jaxb2.version>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>br.com.swconsultoria</groupId>
+      <artifactId>java_certificado</artifactId>
+      <version>3.6</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <version>2.2.12</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpcore</artifactId>
+      <version>4.4.6</version>
+    </dependency>
+
+    <!--Java 11-->
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-impl</artifactId>
+      <version>${jaxb2.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-xjc</artifactId>
+      <version>${jaxb2.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.xml.bind</groupId>
+      <artifactId>jaxb-core</artifactId>
+      <version>2.3.0.1</version>
+    </dependency>
+
+    <!-- Axis 2 -->
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2-kernel</artifactId>
+      <version>${axis2.version}</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>servlet-api</artifactId>
+          <groupId>javax.servlet</groupId>
+        </exclusion>
+        <exclusion>
+          <artifactId>commons-fileupload</artifactId>
+          <groupId>commons-fileupload</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2-adb</artifactId>
+      <version>${axis2.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2-transport-local</artifactId>
+      <version>${axis2.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.axis2</groupId>
+      <artifactId>axis2-transport-http</artifactId>
+      <version>${axis2.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.ws.commons.axiom</groupId>
+      <artifactId>axiom-api</artifactId>
+      <version>1.2.20</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.22</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <resources>
+      <resource>
+        <filtering>false</filtering>
+        <directory>src/main/resources</directory>
+      </resource>
+      <resource>
+        <filtering>false</filtering>
+        <directory>${build.directory}/generated-sources</directory>
+        <includes>
+          <include>**</include>
+        </includes>
+      </resource>
+      <resource>
+        <filtering>false</filtering>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**</include>
+        </includes>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <inherited>true</inherited>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+<!--          <optimize>true</optimize>-->
+          <debug>false</debug>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.2.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.axis2</groupId>
+        <artifactId>axis2-wsdl2code-maven-plugin</artifactId>
+        <version>1.6.4</version>
+        <executions>
+          <execution>
+            <id>consultaNaoEncerrado</id>
+            <goals>
+              <goal>wsdl2code</goal>
+            </goals>
+            <configuration>
+              <packageName>br.com.idxtec.mdfe.webservices.consultaNaoEncerrado</packageName>
+              <wsdlFile>${basedir}/wsdl/MDFeConsNaoEnc.wsdl</wsdlFile>
+              <databindingName>adb</databindingName>
+            </configuration>
+          </execution><execution>
+            <id>consultaStatus</id>
+            <goals>
+              <goal>wsdl2code</goal>
+            </goals>
+            <configuration>
+              <packageName>br.com.idxtec.mdfe.webservices.consultaStatus</packageName>
+              <wsdlFile>${basedir}/wsdl/MDFeStatusServico.wsdl</wsdlFile>
+              <databindingName>adb</databindingName>
+            </configuration>
+          </execution>
+          <execution>
+            <id>consultaSituacao</id>
+            <goals>
+              <goal>wsdl2code</goal>
+            </goals>
+            <configuration>
+              <packageName>br.com.idxtec.mdfe.webservices.consultaSituacao</packageName>
+              <wsdlFile>${basedir}/wsdl/MDFeConsulta.wsdl</wsdlFile>
+              <databindingName>adb</databindingName>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jaxb2-maven-plugin</artifactId>
+        <version>2.2</version>
+        <executions>
+          <execution>
+            <id>consultaNaoEncerrado</id>
+            <goals>
+              <goal>xjc</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.basedir}/schemas/consMDFeNaoEnc_v3.00.xsd</source>
+              </sources>
+              <packageName>br.com.idxtec.mdfe.schemas.consultaNaoEncerrado</packageName>
+              <clearOutputDir>false</clearOutputDir>
+              <arguments>
+                <argument>-nv</argument>
+              </arguments>
+            </configuration>
+          </execution><execution>
+            <id>consStatServMDFe</id>
+            <goals>
+              <goal>xjc</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.basedir}/schemas/consStatServMDFe_v3.00.xsd</source>
+              </sources>
+              <packageName>br.com.idxtec.mdfe.schemas.consultaStatus</packageName>
+              <clearOutputDir>false</clearOutputDir>
+              <arguments>
+                <argument>-nv</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>consSitMDFe</id>
+            <goals>
+              <goal>xjc</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.basedir}/schemas/consSitMDFe_v3.00.xsd</source>
+              </sources>
+              <packageName>br.com.idxtec.mdfe.schemas.consultaSituacao</packageName>
+              <clearOutputDir>false</clearOutputDir>
+              <arguments>
+                <argument>-nv</argument>
+              </arguments>
+            </configuration>
+          </execution>
+        </executions>
+
+      </plugin>
+
+    </plugins>
+  </build>
+</project>

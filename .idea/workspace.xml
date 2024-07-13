@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="33cfbf33-0129-4419-8d79-7fe0cd3aba33" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/COSTA2025.pfx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/consMDFeNaoEncTiposBasico_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/consMDFeNaoEnc_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/consReciMDFeTiposBasico_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/consReciMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/consSitMDFeTiposBasico_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/consSitMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/consStatServMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/consStatServTiposBasico_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/distMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/enviMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/evAlteracaoPagtoServMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/evCancMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/evConfirmaServMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/evEncMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/evIncCondutorMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/evInclusaoDFeMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/evPagtoOperMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/eventoMDFeTiposBasico_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/eventoMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/leiauteDistMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/mdfeConsultaDFeTiposBasico_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/mdfeConsultaDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/mdfeModalAereo_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/mdfeModalAquaviario_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/mdfeModalFerroviario_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/mdfeModalRodoviario_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/mdfeTiposBasico_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/mdfe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/procEventoMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/procMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/retConsMDFeNaoEnc_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/retConsReciMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/retConsSitMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/retConsStatServMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/retDistMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/retEnviMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/retEventoMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/retMDFeConsultaDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/retMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/tiposGeralMDFe_v3.00.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schemas/xmldsig-core-schema_v1.01.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/Assinar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/ConsultaNaoEncerrado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/ConsultaSituacaoMdfe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/ConsultaStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/Mdfe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/dom/ConfiguracoesMdfe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/AmbienteEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/AssinaturaEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/EstadosEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/exceptions/MdfeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/util/ConfiguracoesUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/util/ConstantesUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/util/UrlWebServicesUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/util/XmlMdfeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wsdl/MDFeConsNaoEnc.wsdl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wsdl/MDFeConsulta.wsdl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wsdl/MDFeRecepcao.wsdl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wsdl/MDFeRecepcaoEvento.wsdl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wsdl/MDFeRecepcaoSinc.wsdl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wsdl/MDFeRetRecepcao.wsdl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wsdl/MDFeStatusServico.wsdl" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2j9SDdxsVMclWbannioXs4VgYzm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.ConsultaNaoEncerrado.executor": "Run",
+    "Application.ConsultaSituacaoMdfe.executor": "Run",
+    "Application.ConsultaStatus.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.Java_MDFe300 [clean,install].executor": "Run",
+    "Maven.java_mdfe [clean,install].executor": "Run",
+    "Maven.java_mdfe [clean].executor": "Run",
+    "Maven.java_mdfe [package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/paulopenalva/Projetos/IdxSistemas/Java_MDFe",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="br.com.idxtec.mdfe" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ConsultaNaoEncerrado">
+    <configuration name="ConsultaNaoEncerrado" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.idxtec.mdfe.ConsultaNaoEncerrado" />
+      <module name="Java_MDFe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.idxtec.mdfe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConsultaSituacaoMdfe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.idxtec.mdfe.ConsultaSituacaoMdfe" />
+      <module name="Java_MDFe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.idxtec.mdfe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConsultaStatus" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="zulu-1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="br.com.idxtec.mdfe.ConsultaStatus" />
+      <module name="Java_MDFe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.idxtec.mdfe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ConsultaNaoEncerrado" />
+        <item itemvalue="Application.ConsultaStatus" />
+        <item itemvalue="Application.ConsultaSituacaoMdfe" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="33cfbf33-0129-4419-8d79-7fe0cd3aba33" name="Changes" comment="" />
+      <created>1720797681103</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1720797681103</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
