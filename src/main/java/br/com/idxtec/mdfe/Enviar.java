@@ -5,7 +5,7 @@ import br.com.idxtec.mdfe.enums.AmbienteEnum;
 import br.com.idxtec.mdfe.enums.AssinaturaEnum;
 import br.com.idxtec.mdfe.enums.ServicosEnum;
 import br.com.idxtec.mdfe.exceptions.MdfeException;
-import br.com.idxtec.mdfe.schemas.recepcao.TEnviMDFe;
+import br.com.idxtec.mdfe.schemas.recepcao.TMDFe;
 import br.com.idxtec.mdfe.schemas.recepcao.TRetMDFe;
 import br.com.idxtec.mdfe.util.UrlWebServicesUtil;
 import br.com.idxtec.mdfe.util.XmlMdfeUtil;
@@ -31,23 +31,23 @@ public class Enviar {
     /**
      * Metodo para Montar a NFE
      *
-     * @param enviMDFe - Objeto TEnviMDFe
+     * @param mdfe - Objeto TEnviMDFe
      * @param valida  - Booleano para validar o Xml
      * @throws MdfeException
      */
-    public static TEnviMDFe montaMDFe(ConfiguracoesMdfe config, TEnviMDFe enviMDFe, boolean valida) throws MdfeException {
+    public static TMDFe montaMDFe(ConfiguracoesMdfe config, TMDFe mdfe, boolean valida) throws MdfeException {
 
         try {
 
             /**
              * Cria o xml
              */
-            String xml = XmlMdfeUtil.objectToXml(enviMDFe, config.getEncode());
+            String xml = XmlMdfeUtil.objectToXml(mdfe);
 
             /**
              * Assina o Xml
              */
-            xml = Assinar.assinaNfe(config, xml, AssinaturaEnum.MDFE);
+            xml = Assinar.assinaMDFe(config, xml, AssinaturaEnum.MDFE);
 
             //Retira Quebra de Linha
             xml = xml.replaceAll(System.lineSeparator(), "");
@@ -61,7 +61,7 @@ public class Enviar {
                 new Validar().validaXml(config, xml, ServicosEnum.ENVIO);
             }
 
-            return XmlMdfeUtil.xmlToObject(xml, TEnviMDFe.class);
+            return XmlMdfeUtil.xmlToObject(xml, TMDFe.class);
 
         } catch (Exception e) {
             throw new MdfeException(e.getMessage(),e);
@@ -73,19 +73,19 @@ public class Enviar {
      * Metodo para Enviar a MDFe
      *
      * @param config - Configurações
-     * @param enviMDFe - Objeto TEnviMDFe
+     * @param mdfe - Objeto TEnviMDFe
      * @return TRetEnviMDFe
      * @throws MdfeException
      */
-    public static TRetMDFe enviaMDFe(ConfiguracoesMdfe config, TEnviMDFe enviMDFe) throws MdfeException {
+    public static TRetMDFe enviaMDFe(ConfiguracoesMdfe config, TMDFe mdfe) throws MdfeException {
         try {
 
-            String xml = XmlMdfeUtil.objectToXml(enviMDFe, config.getEncode());
+            String xml = XmlMdfeUtil.objectToXml(mdfe);
 
             log.info("[XML-ENVIO]: " + xml);
 
             MDFeRecepcaoSincStub.MdfeDadosMsg dadosMsg = new MDFeRecepcaoSincStub.MdfeDadosMsg();
-            dadosMsg.setMdfeDadosMsg(xml);
+            dadosMsg.setMdfeDadosMsg(XmlMdfeUtil.xmlToGZip(xml));
 
             MDFeRecepcaoSincStub stub = new MDFeRecepcaoSincStub(
                         config.getAmbiente().equals(AmbienteEnum.PRODUCAO)

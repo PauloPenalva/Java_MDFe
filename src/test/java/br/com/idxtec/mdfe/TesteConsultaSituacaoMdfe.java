@@ -11,7 +11,7 @@ public class TesteConsultaSituacaoMdfe {
 
     public static void main(String[] args) {
         try {
-            String chaveMdfe = "35170812195067000108580010000000021000000026";
+            String chaveMdfe = "35240709109848000128580010000000011972259814";
 
             ConfiguracoesMdfe config = TesteConfig.iniciaConfiguracoes(EstadosEnum.SP, AmbienteEnum.HOMOLOGACAO);
 

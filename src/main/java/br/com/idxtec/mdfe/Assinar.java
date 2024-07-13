@@ -41,30 +41,29 @@ import static java.util.Optional.ofNullable;
 
 /**
  * Classe Responsavel Por Assinar O Xml.
- * Adaptado do original por Paulo Penalva - 12/07/2024 para o projeto MDFe.
  *
  * @author Samuel Oliveira - samuel@swconsultoria.com.br - www.swconsultoria.com.br
- * @author Paulo Penalva - paulo.penalva@gmail.com
- *
  */
 public class Assinar {
 
     private static PrivateKey privateKey;
     private static KeyInfo keyInfo;
 
+    private Assinar() {}
+
     /**
      * @param stringXml
-     * @param tipoAssinatura ('NFe' para nfe normal , 'infInut' para inutilizacao, 'evento'
+     * @param tipoAssinatura ('MDFe' para mdfe normal , 'infInut' para inutilizacao, 'evento'
      *                       para eventos)
      * @return String do Xml Assinado
      * @throws MdfeException
      */
-    public static String assinaNfe(ConfiguracoesMdfe config, String stringXml, AssinaturaEnum tipoAssinatura) throws MdfeException {
+    public static String assinaMDFe(ConfiguracoesMdfe config, String stringXml, AssinaturaEnum tipoAssinatura) throws MdfeException {
 
-        stringXml = stringXml.replaceAll("\r\n", "").replaceAll("\n", "").replaceAll(System.lineSeparator(), ""); // Erro quando tem salto de linha.
+        stringXml = stringXml.replaceAll(System.lineSeparator(), ""); // Erro quando tem salto de linha.
         stringXml = stringXml.replaceAll("\\s+<", "<"); // Erro Espaço antes do final da Tag.
         stringXml = assinaDocMDFe(config, stringXml, tipoAssinatura);
-        stringXml = stringXml.replaceAll("&#13;", ""); // Java 11
+        stringXml = stringXml.replace("&#13;", ""); // Java 11
 
         return stringXml;
     }
@@ -77,25 +76,24 @@ public class Assinar {
             ArrayList<Transform> transformList = signatureFactory(signatureFactory);
             loadCertificates(config, signatureFactory);
 
-            for (int i = 0; i < document.getDocumentElement().getElementsByTagName(tipoAssinatura.getTipo()).getLength(); i++) {
-                assinarMDFe(tipoAssinatura, signatureFactory, transformList, privateKey, keyInfo, document, i);
-            }
+            assinarMDFe(tipoAssinatura, signatureFactory, transformList, privateKey, keyInfo, document);
+
             return outputXML(document);
         } catch (SAXException | IOException | ParserConfigurationException | NoSuchAlgorithmException
                  | InvalidAlgorithmParameterException | KeyStoreException | UnrecoverableEntryException
                  | CertificadoException | MarshalException
                  | XMLSignatureException e) {
-            throw new MdfeException("Erro ao Assinar Mdfe" + e.getMessage(),e);
+            throw new MdfeException("Erro ao Assinar MDFe", e);
         }
     }
 
     private static void assinarMDFe(AssinaturaEnum tipoAssinatura, XMLSignatureFactory fac, ArrayList<Transform> transformList,
-                                    PrivateKey privateKey, KeyInfo ki, Document document, int indexMDFe) throws NoSuchAlgorithmException,
+                                    PrivateKey privateKey, KeyInfo ki, Document document) throws NoSuchAlgorithmException,
             InvalidAlgorithmParameterException, MarshalException, XMLSignatureException {
 
         NodeList elements = document.getElementsByTagName(tipoAssinatura.getTag());
 
-        org.w3c.dom.Element el = (org.w3c.dom.Element) elements.item(indexMDFe);
+        org.w3c.dom.Element el = (org.w3c.dom.Element) elements.item(0);
         String id = el.getAttribute("Id");
         el.setIdAttribute("Id", true);
         Reference ref = fac.newReference("#" + id, fac.newDigestMethod(DigestMethod.SHA1, null), transformList, null,
@@ -107,10 +105,7 @@ public class Assinar {
 
         XMLSignature signature = fac.newXMLSignature(si, ki);
 
-        DOMSignContext dsc;
-
-        dsc = new DOMSignContext(privateKey,
-                document.getDocumentElement().getElementsByTagName(tipoAssinatura.getTipo()).item(indexMDFe));
+        DOMSignContext dsc = new DOMSignContext(privateKey, document.getFirstChild());
 
         dsc.setBaseURI("ok");
 
@@ -120,7 +115,7 @@ public class Assinar {
     private static ArrayList<Transform> signatureFactory(XMLSignatureFactory signatureFactory)
             throws NoSuchAlgorithmException, InvalidAlgorithmParameterException {
 
-        ArrayList<Transform> transformList = new ArrayList<Transform>();
+        ArrayList<Transform> transformList = new ArrayList<>();
         Transform envelopedTransform = signatureFactory.newTransform(Transform.ENVELOPED, (TransformParameterSpec) null);
         Transform c14NTransform = signatureFactory.newTransform("http://www.w3.org/TR/2001/REC-xml-c14n-20010315", (TransformParameterSpec) null);
 
@@ -157,16 +152,17 @@ public class Assinar {
 
     private static String outputXML(Document doc) throws MdfeException {
 
-        try (ByteArrayOutputStream os = new ByteArrayOutputStream()){
+        try (ByteArrayOutputStream os = new ByteArrayOutputStream()) {
             TransformerFactory tf = TransformerFactory.newInstance();
             Transformer trans = tf.newTransformer();
             trans.transform(new DOMSource(doc), new StreamResult(os));
-            String xml = os.toString();
-            xml = xml.replaceAll("\\r\\n", "");
-            xml = xml.replaceAll(" standalone=\"no\"", "");
-            return xml;
+            return os.toString()
+                    .replace(System.lineSeparator(), "")
+                    .replace(" standalone=\"no\"", "");
         } catch (TransformerException | IOException e) {
-            throw new MdfeException("Erro ao Transformar Documento:" + e.getMessage(),e);
+            throw new MdfeException("Erro ao Transformar Documento:", e);
         }
+
     }
+
 }

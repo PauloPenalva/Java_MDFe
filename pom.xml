@@ -124,7 +124,7 @@
         <filtering>false</filtering>
         <directory>${build.directory}/generated-sources</directory>
         <includes>
-          <include>**</include>
+          <include>**/*</include>
         </includes>
       </resource>
       <resource>
@@ -183,17 +183,6 @@
             </configuration>
           </execution>
           <execution>
-            <id>recepcao</id>
-            <goals>
-              <goal>wsdl2code</goal>
-            </goals>
-            <configuration>
-              <packageName>br.com.idxtec.mdfe.webservices.recepcao</packageName>
-              <wsdlFile>${basedir}/wsdl/MDFeRecepcao.wsdl</wsdlFile>
-              <databindingName>adb</databindingName>
-            </configuration>
-          </execution>
-          <execution>
             <id>consultaNaoEncerrado</id>
             <goals>
               <goal>wsdl2code</goal>
@@ -235,6 +224,22 @@
         <version>2.2</version>
         <executions>
           <execution>
+            <id>modal_rodo</id>
+            <goals>
+              <goal>xjc</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.basedir}/schemas/mdfeModalRodoviario_v3.00.xsd</source>
+              </sources>
+              <packageName>br.com.idxtec.mdfe.schemas.modal.rodo</packageName>
+              <clearOutputDir>false</clearOutputDir>
+              <arguments>
+                <argument>-nv</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
             <id>recepcao</id>
             <goals>
               <goal>xjc</goal>
@@ -243,6 +248,7 @@
               <sources>
                 <source>${project.basedir}/schemas/enviMDFe_v3.00.xsd</source>
                 <source>${project.basedir}/schemas/retMDFe_v3.00.xsd</source>
+                <source>${project.basedir}/schemas/procMDFe_v3.00.xsd</source>
               </sources>
               <packageName>br.com.idxtec.mdfe.schemas.recepcao</packageName>
               <clearOutputDir>false</clearOutputDir>

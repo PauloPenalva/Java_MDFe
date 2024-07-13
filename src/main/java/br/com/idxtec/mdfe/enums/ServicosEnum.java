@@ -9,7 +9,7 @@ import lombok.Getter;
 @Getter
 public enum ServicosEnum {
 
-    ENVIO("enviMDFe_v3.00","enviMDFe_v3.00.xsd"),
+    ENVIO("mdfe_v3.00","mdfe_v3.00.xsd"),
     QRCODE("URL-QRCode", "");
 
     private final String servico;

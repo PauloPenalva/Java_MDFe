@@ -20,6 +20,10 @@ public class TesteConsultaNaoEncerrado {
             TRetConsMDFeNaoEnc retorno = ConsultaNaoEncerrado.consulta(ConfiguracoesUtil.iniciaConfiguracoes(config), cnpj, null);
             log.info("Status: " + retorno.getCStat());
             log.info("Motivo: " + retorno.getXMotivo());
+            log.info("Quantidade de MDF-e não encerrados: " + retorno.getInfMDFe().size());
+            log.info("Chaves dos MDF-e não encerrados:");
+            retorno.getInfMDFe().forEach(infMDFe -> log.info("Chave: " + infMDFe.getChMDFe()));
+
         } catch (Exception e) {
             log.severe(e.getMessage());
         }

@@ -4,7 +4,6 @@ import br.com.idxtec.mdfe.dom.ConfiguracoesMdfe;
 import br.com.idxtec.mdfe.enums.AmbienteEnum;
 import br.com.idxtec.mdfe.enums.EstadosEnum;
 import br.com.idxtec.mdfe.exceptions.MdfeException;
-import br.com.idxtec.mdfe.util.ConfiguracoesUtil;
 import br.com.swconsultoria.certificado.Certificado;
 import br.com.swconsultoria.certificado.CertificadoService;
 import br.com.swconsultoria.certificado.exception.CertificadoException;
@@ -21,14 +20,16 @@ public class TesteConfig {
         String pastaSchemas = "/Users/paulopenalva/Projetos/IdxSistemas/Java_MDFe/schemas";
 
         Certificado certificado = CertificadoService.certificadoPfx(certPath, certPass);
+        CertificadoService.inicializaCertificado(certificado);
 
-        ConfiguracoesMdfe config = ConfiguracoesMdfe.criarConfiguracoes(
-                EstadosEnum.SP,
-                AmbienteEnum.PRODUCAO,
+        ConfiguracoesMdfe configuracoesMdfe = ConfiguracoesMdfe.criarConfiguracoes(
+                estado,
+                ambiente,
                 certificado,
                 pastaSchemas);
 
-        return ConfiguracoesUtil.iniciaConfiguracoes(config);
+
+       return configuracoesMdfe;
 
     }
 }
