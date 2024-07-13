@@ -62,29 +62,4 @@ public class ConsultaSituacaoMdfe {
             throw new MdfeException(e.getMessage(), e);
         }
     }
-
-    public static void main(String[] args) {
-        try {
-            String certPath = "/Users/paulopenalva/Projetos/IdxSistemas/Java_MDFe/COSTA2025.pfx";
-            String certPass = "12345678";
-
-            String pastaSchemas = "/Users/paulopenalva/Projetos/IdxSistemas/Java_MDFe/schemas";
-
-            String chaveMdfe = "35170812195067000108580010000000021000000026";
-
-            Certificado certificado = CertificadoService.certificadoPfx(certPath, certPass);
-
-            ConfiguracoesMdfe config = ConfiguracoesMdfe.criarConfiguracoes(
-                    EstadosEnum.SP,
-                    AmbienteEnum.PRODUCAO,
-                    certificado,
-                    pastaSchemas);
-
-            TRetConsSitMDFe retorno = ConsultaSituacaoMdfe.consulta(ConfiguracoesUtil.iniciaConfiguracoes(config), chaveMdfe);
-            log.info("Status: " + retorno.getCStat());
-            log.info("Motivo: " + retorno.getXMotivo());
-        } catch (Exception e) {
-            log.severe(e.getMessage());
-        }
-    }
 }

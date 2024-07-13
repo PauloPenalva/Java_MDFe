@@ -4,13 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33cfbf33-0129-4419-8d79-7fe0cd3aba33" name="Changes" comment="commit inicial">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/Validar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/ServicosEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/exceptions/MdfeValidacaoException.java" afterDir="false" />
+    <list default="true" id="33cfbf33-0129-4419-8d79-7fe0cd3aba33" name="Changes" comment="feat():&#10;classe Validar xml">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/Enviar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/dom/Proxy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/util/ChaveUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/util/ObjetoMDFeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/ws/RetryParameter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/idxtec/mdfe/TesteConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/idxtec/mdfe/TesteConsultaNaoEncerrado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/idxtec/mdfe/TesteConsultaSituacaoMdfe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/idxtec/mdfe/TesteConsultaStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/ConsultaNaoEncerrado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/ConsultaNaoEncerrado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/ConsultaSituacaoMdfe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/ConsultaSituacaoMdfe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/ConsultaStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/ConsultaStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/Mdfe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/Mdfe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/ServicosEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/ServicosEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wsdl/MDFeRecepcao.wsdl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wsdl/MDFeRetRecepcao.wsdl" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,26 +52,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.ConsultaNaoEncerrado.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ConsultaSituacaoMdfe.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ConsultaStatus.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.Java_MDFe300 [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.java_mdfe [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.java_mdfe [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.java_mdfe [package].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/paulopenalva/Projetos/IdxSistemas/Java_MDFe&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.ConsultaNaoEncerrado.executor": "Run",
+    "Application.ConsultaSituacaoMdfe.executor": "Run",
+    "Application.ConsultaStatus.executor": "Run",
+    "Application.TesteConsultaStatus.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.Java_MDFe300 [clean,install].executor": "Run",
+    "Maven.java_mdfe [clean,install].executor": "Run",
+    "Maven.java_mdfe [clean].executor": "Run",
+    "Maven.java_mdfe [package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/paulopenalva/Projetos/IdxSistemas/Java_MDFe",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -72,22 +85,9 @@
       <recent name="br.com.idxtec.mdfe" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ConsultaNaoEncerrado">
+  <component name="RunManager" selected="Application.TesteConsultaNaoEncerrado">
     <configuration name="ConsultaNaoEncerrado" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.idxtec.mdfe.ConsultaNaoEncerrado" />
-      <module name="Java_MDFe" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.idxtec.mdfe.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConsultaSituacaoMdfe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.idxtec.mdfe.ConsultaSituacaoMdfe" />
       <module name="Java_MDFe" />
       <extension name="coverage">
         <pattern>
@@ -114,11 +114,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TesteConsultaNaoEncerrado" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.idxtec.mdfe.TesteConsultaNaoEncerrado" />
+      <module name="Java_MDFe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.idxtec.mdfe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TesteConsultaSituacaoMdfe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.idxtec.mdfe.TesteConsultaSituacaoMdfe" />
+      <module name="Java_MDFe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.idxtec.mdfe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TesteConsultaStatus" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.idxtec.mdfe.TesteConsultaStatus" />
+      <module name="Java_MDFe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.idxtec.mdfe.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TesteConsultaNaoEncerrado" />
+        <item itemvalue="Application.TesteConsultaStatus" />
+        <item itemvalue="Application.TesteConsultaSituacaoMdfe" />
         <item itemvalue="Application.ConsultaNaoEncerrado" />
         <item itemvalue="Application.ConsultaStatus" />
-        <item itemvalue="Application.ConsultaSituacaoMdfe" />
       </list>
     </recent_temporary>
   </component>
@@ -147,12 +188,21 @@
       <option name="project" value="LOCAL" />
       <updated>1720839908143</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat():&#10;classe Validar xml">
+      <option name="closed" value="true" />
+      <created>1720841559971</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1720841559971</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="commit inicial" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit inicial" />
+    <MESSAGE value="feat():&#10;classe Validar xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat():&#10;classe Validar xml" />
   </component>
 </project>

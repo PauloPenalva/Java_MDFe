@@ -5,13 +5,25 @@ import br.com.idxtec.mdfe.exceptions.MdfeException;
 import br.com.idxtec.mdfe.schemas.consultaNaoEncerrado.TRetConsMDFeNaoEnc;
 import br.com.idxtec.mdfe.schemas.consultaSituacao.TRetConsSitMDFe;
 import br.com.idxtec.mdfe.schemas.consultaStatus.TRetConsStatServ;
+import br.com.idxtec.mdfe.schemas.recepcao.TEnviMDFe;
+import br.com.idxtec.mdfe.schemas.recepcao.TRetMDFe;
 import br.com.idxtec.mdfe.util.ConfiguracoesUtil;
 
 public class Mdfe {
 
     private Mdfe() {
-
+        throw new IllegalStateException("Utility class");
     }
+
+    public static TEnviMDFe montaMDFe(ConfiguracoesMdfe configuracoesMdfe, TEnviMDFe enviMDFe, boolean valida) throws MdfeException {
+        return Enviar.montaMDFe(ConfiguracoesUtil.iniciaConfiguracoes(configuracoesMdfe), enviMDFe, valida);
+    }
+
+
+    public static TRetMDFe enviar(ConfiguracoesMdfe configuracoesMdfe, TEnviMDFe enviMDFe, boolean valida) throws MdfeException {
+        return Enviar.enviaMDFe(ConfiguracoesUtil.iniciaConfiguracoes(configuracoesMdfe), enviMDFe);
+    }
+
 
     public static TRetConsMDFeNaoEnc consultaNaoEncerrado(ConfiguracoesMdfe configuracoesMdfe, String cnpj, String cpf) throws MdfeException {
         return ConsultaNaoEncerrado.consulta(ConfiguracoesUtil.iniciaConfiguracoes(configuracoesMdfe), cnpj, cpf);

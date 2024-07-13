@@ -172,6 +172,17 @@
         <version>1.6.4</version>
         <executions>
           <execution>
+            <id>recepcaoSinc</id>
+            <goals>
+              <goal>wsdl2code</goal>
+            </goals>
+            <configuration>
+              <packageName>br.com.idxtec.mdfe.webservices.recepcaoSinc</packageName>
+              <wsdlFile>${basedir}/wsdl/MDFeRecepcaoSinc.wsdl</wsdlFile>
+              <databindingName>adb</databindingName>
+            </configuration>
+          </execution>
+          <execution>
             <id>recepcao</id>
             <goals>
               <goal>wsdl2code</goal>
@@ -231,6 +242,7 @@
             <configuration>
               <sources>
                 <source>${project.basedir}/schemas/enviMDFe_v3.00.xsd</source>
+                <source>${project.basedir}/schemas/retMDFe_v3.00.xsd</source>
               </sources>
               <packageName>br.com.idxtec.mdfe.schemas.recepcao</packageName>
               <clearOutputDir>false</clearOutputDir>

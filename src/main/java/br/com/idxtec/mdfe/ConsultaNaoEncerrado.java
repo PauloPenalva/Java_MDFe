@@ -2,17 +2,13 @@ package br.com.idxtec.mdfe;
 
 import br.com.idxtec.mdfe.dom.ConfiguracoesMdfe;
 import br.com.idxtec.mdfe.enums.AmbienteEnum;
-import br.com.idxtec.mdfe.enums.EstadosEnum;
 import br.com.idxtec.mdfe.exceptions.MdfeException;
 import br.com.idxtec.mdfe.schemas.consultaNaoEncerrado.TConsMDFeNaoEnc;
 import br.com.idxtec.mdfe.schemas.consultaNaoEncerrado.TRetConsMDFeNaoEnc;
-import br.com.idxtec.mdfe.util.ConfiguracoesUtil;
 import br.com.idxtec.mdfe.util.ConstantesUtil;
 import br.com.idxtec.mdfe.util.UrlWebServicesUtil;
 import br.com.idxtec.mdfe.util.XmlMdfeUtil;
 import br.com.idxtec.mdfe.webservices.consultaNaoEncerrado.MDFeConsNaoEncStub;
-import br.com.swconsultoria.certificado.Certificado;
-import br.com.swconsultoria.certificado.CertificadoService;
 import lombok.extern.java.Log;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.util.AXIOMUtil;
@@ -68,32 +64,6 @@ public class ConsultaNaoEncerrado {
 
         } catch (Exception e) {
             throw new MdfeException(e.getMessage(), e);
-        }
-    }
-
-    public static void main(String[] args) {
-        try {
-            String certPath = "/Users/paulopenalva/Projetos/IdxSistemas/Java_MDFe/COSTA2025.pfx";
-            String certPass = "12345678";
-
-            String pastaSchemas = "/Users/paulopenalva/Projetos/IdxSistemas/Java_MDFe/schemas";
-
-            String cnpj = "09109848000128";
-            String cpf = null;
-
-            Certificado certificado = CertificadoService.certificadoPfx(certPath, certPass);
-
-            ConfiguracoesMdfe config = ConfiguracoesMdfe.criarConfiguracoes(
-                    EstadosEnum.SP,
-                    AmbienteEnum.HOMOLOGACAO,
-                    certificado,
-                    pastaSchemas);
-
-            TRetConsMDFeNaoEnc retorno = ConsultaNaoEncerrado.consulta(ConfiguracoesUtil.iniciaConfiguracoes(config), cnpj, null);
-            log.info("Status: " + retorno.getCStat());
-            log.info("Motivo: " + retorno.getXMotivo());
-        } catch (Exception e) {
-            log.severe(e.getMessage());
         }
     }
 }
