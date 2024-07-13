@@ -4,79 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33cfbf33-0129-4419-8d79-7fe0cd3aba33" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/COSTA2025.pfx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/consMDFeNaoEncTiposBasico_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/consMDFeNaoEnc_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/consReciMDFeTiposBasico_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/consReciMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/consSitMDFeTiposBasico_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/consSitMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/consStatServMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/consStatServTiposBasico_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/distMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/enviMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/evAlteracaoPagtoServMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/evCancMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/evConfirmaServMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/evEncMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/evIncCondutorMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/evInclusaoDFeMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/evPagtoOperMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/eventoMDFeTiposBasico_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/eventoMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/leiauteDistMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/mdfeConsultaDFeTiposBasico_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/mdfeConsultaDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/mdfeModalAereo_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/mdfeModalAquaviario_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/mdfeModalFerroviario_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/mdfeModalRodoviario_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/mdfeTiposBasico_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/mdfe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/procEventoMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/procMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/retConsMDFeNaoEnc_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/retConsReciMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/retConsSitMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/retConsStatServMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/retDistMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/retEnviMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/retEventoMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/retMDFeConsultaDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/retMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/tiposGeralMDFe_v3.00.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schemas/xmldsig-core-schema_v1.01.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/Assinar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/ConsultaNaoEncerrado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/ConsultaSituacaoMdfe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/ConsultaStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/Mdfe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/dom/ConfiguracoesMdfe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/AmbienteEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/AssinaturaEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/EstadosEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/exceptions/MdfeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/util/ConfiguracoesUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/util/ConstantesUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/util/UrlWebServicesUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/util/XmlMdfeUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wsdl/MDFeConsNaoEnc.wsdl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wsdl/MDFeConsulta.wsdl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wsdl/MDFeRecepcao.wsdl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wsdl/MDFeRecepcaoEvento.wsdl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wsdl/MDFeRecepcaoSinc.wsdl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wsdl/MDFeRetRecepcao.wsdl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wsdl/MDFeStatusServico.wsdl" afterDir="false" />
-    </list>
+    <list default="true" id="33cfbf33-0129-4419-8d79-7fe0cd3aba33" name="Changes" comment="commit inicial" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -196,9 +124,20 @@
       <option name="presentableId" value="Default" />
       <updated>1720797681103</updated>
     </task>
+    <task id="LOCAL-00001" summary="commit inicial">
+      <option name="closed" value="true" />
+      <created>1720839736456</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720839736456</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="commit inicial" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit inicial" />
   </component>
 </project>
