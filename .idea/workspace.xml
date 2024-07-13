@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33cfbf33-0129-4419-8d79-7fe0cd3aba33" name="Changes" comment="commit inicial" />
+    <list default="true" id="33cfbf33-0129-4419-8d79-7fe0cd3aba33" name="Changes" comment="commit inicial">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/Validar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/ServicosEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/exceptions/MdfeValidacaoException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/Mdfe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/Mdfe.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

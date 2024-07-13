@@ -172,6 +172,17 @@
         <version>1.6.4</version>
         <executions>
           <execution>
+            <id>recepcao</id>
+            <goals>
+              <goal>wsdl2code</goal>
+            </goals>
+            <configuration>
+              <packageName>br.com.idxtec.mdfe.webservices.recepcao</packageName>
+              <wsdlFile>${basedir}/wsdl/MDFeRecepcao.wsdl</wsdlFile>
+              <databindingName>adb</databindingName>
+            </configuration>
+          </execution>
+          <execution>
             <id>consultaNaoEncerrado</id>
             <goals>
               <goal>wsdl2code</goal>
@@ -181,7 +192,8 @@
               <wsdlFile>${basedir}/wsdl/MDFeConsNaoEnc.wsdl</wsdlFile>
               <databindingName>adb</databindingName>
             </configuration>
-          </execution><execution>
+          </execution>
+          <execution>
             <id>consultaStatus</id>
             <goals>
               <goal>wsdl2code</goal>
@@ -212,6 +224,22 @@
         <version>2.2</version>
         <executions>
           <execution>
+            <id>recepcao</id>
+            <goals>
+              <goal>xjc</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.basedir}/schemas/enviMDFe_v3.00.xsd</source>
+              </sources>
+              <packageName>br.com.idxtec.mdfe.schemas.recepcao</packageName>
+              <clearOutputDir>false</clearOutputDir>
+              <arguments>
+                <argument>-nv</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
             <id>consultaNaoEncerrado</id>
             <goals>
               <goal>xjc</goal>
@@ -226,7 +254,8 @@
                 <argument>-nv</argument>
               </arguments>
             </configuration>
-          </execution><execution>
+          </execution>
+          <execution>
             <id>consStatServMDFe</id>
             <goals>
               <goal>xjc</goal>
