@@ -4,6 +4,7 @@ import br.com.idxtec.mdfe.schemas.consultaNaoEncerrado.TConsMDFeNaoEnc;
 import br.com.idxtec.mdfe.schemas.consultaSituacao.TConsSitMDFe;
 import br.com.idxtec.mdfe.schemas.consultaStatus.TConsStatServ;
 import br.com.idxtec.mdfe.exceptions.MdfeException;
+import br.com.idxtec.mdfe.schemas.eventos.TEvento;
 import br.com.idxtec.mdfe.schemas.recepcao.MdfeProc;
 import br.com.idxtec.mdfe.schemas.recepcao.TMDFe;
 import br.com.idxtec.mdfe.schemas.recepcao.TProtMDFe;
@@ -39,6 +40,7 @@ public class XmlMdfeUtil {
     private static final String MDFE = "TMDFe";
     private static final String MDFE_PROT = "TProtMDFe";
     private static final String MDFE_PROC = "MdfeProc";
+    private static final String EVENTO = "TEvento";
 
 
     private XmlMdfeUtil() {
@@ -107,6 +109,13 @@ public class XmlMdfeUtil {
                         new QName("http://www.portalfiscal.inf.br/mdfe", "mdfeProc"),
                         MdfeProc.class,
                         (MdfeProc) obj);
+                break;
+            case EVENTO:
+                context = JAXBContext.newInstance(TEvento.class);
+                element = new JAXBElement<TEvento>(
+                        new QName("http://www.portalfiscal.inf.br/mdfe", "eventoMDFe"),
+                        TEvento.class,
+                        (TEvento) obj);
                 break;
             default:
                 throw new MdfeException("Objeto não mapeado no XmlUtil:" + obj.getClass().getSimpleName());

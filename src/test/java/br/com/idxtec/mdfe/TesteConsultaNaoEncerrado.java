@@ -22,7 +22,12 @@ public class TesteConsultaNaoEncerrado {
             log.info("Motivo: " + retorno.getXMotivo());
             log.info("Quantidade de MDF-e não encerrados: " + retorno.getInfMDFe().size());
             log.info("Chaves dos MDF-e não encerrados:");
-            retorno.getInfMDFe().forEach(infMDFe -> log.info("Chave: " + infMDFe.getChMDFe()));
+            log.info("");
+            retorno.getInfMDFe().forEach(infMDFe -> {
+                log.info("Chave: " + infMDFe.getChMDFe());
+                log.info("Protocolo: " + infMDFe.getNProt());
+                log.info("=======================================================");
+            });
 
         } catch (Exception e) {
             log.severe(e.getMessage());

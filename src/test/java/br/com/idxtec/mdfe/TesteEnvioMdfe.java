@@ -31,7 +31,7 @@ public class TesteEnvioMdfe {
 
             String cnpj = "09109848000128";
             int serie = 1;
-            int numero = 4;
+            int numero = 5;
 
             TMDFe mdfe = preencheObjetoMdfe(config, cnpj, serie, numero);
             mdfe = Mdfe.montaMDFe(config, mdfe, true);

@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 public enum AssinaturaEnum {
 
     MDFE("MDFe","infMDFe"),
-    EVENTO("evento","infEvento");
+    EVENTO("eventoMDFe","infEvento");
 
     private final String tipo;
     private final String tag;
