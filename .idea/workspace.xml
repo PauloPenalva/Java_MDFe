@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33cfbf33-0129-4419-8d79-7fe0cd3aba33" name="Changes" comment="feat():&#10;envio mdfe">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/Eventos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/EventosMdfeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/eventos/CancelarMDFe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/eventos/EncerrarMDFe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/idxtec/mdfe/TesteEvCancMdfe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/br/com/idxtec/mdfe/TesteEvEncMdfe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/AssinaturaEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/AssinaturaEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/ServicosEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/ServicosEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/StatusMdfeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/enums/StatusMdfeEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/util/XmlMdfeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/util/XmlMdfeUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/idxtec/mdfe/TesteConsultaNaoEncerrado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/idxtec/mdfe/TesteConsultaNaoEncerrado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/idxtec/mdfe/TesteEnvioMdfe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/idxtec/mdfe/TesteEnvioMdfe.java" afterDir="false" />
-    </list>
+    <list default="true" id="33cfbf33-0129-4419-8d79-7fe0cd3aba33" name="Changes" comment="feat():&#10;- evento cancelamento&#10;- evento encerramento" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +44,7 @@
     "Application.TesteConsultaStatus.executor": "Run",
     "Application.TesteEncMdfe.executor": "Run",
     "Application.TesteEnvioMdfe.executor": "Run",
-    "Application.TesteEvCancMdfe.executor": "Debug",
+    "Application.TesteEvCancMdfe.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "Maven.Java_MDFe300 [clean,install].executor": "Run",
     "Maven.java_mdfe [clean,install].executor": "Run",
@@ -214,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720906346767</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat():&#10;- evento cancelamento&#10;- evento encerramento">
+      <option name="closed" value="true" />
+      <created>1720997384573</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720997384574</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -223,7 +216,8 @@
     <MESSAGE value="feat():&#10;classe Validar xml" />
     <MESSAGE value="word():&#10;envio mdfe" />
     <MESSAGE value="feat():&#10;envio mdfe" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat():&#10;envio mdfe" />
+    <MESSAGE value="feat():&#10;- evento cancelamento&#10;- evento encerramento" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat():&#10;- evento cancelamento&#10;- evento encerramento" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -232,11 +226,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/util/XmlMdfeUtil.java</url>
           <line>79</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/idxtec/mdfe/util/ObjetoMDFeUtil.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
