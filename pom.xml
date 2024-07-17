@@ -2,13 +2,27 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.example</groupId>
+  <groupId>br.com.idxtec</groupId>
   <artifactId>java_mdfe</artifactId>
-  <version>3.0.0</version>
+  <version>3.0</version>
   <packaging>jar</packaging>
-
   <name>Java MDFe</name>
   <url>http://github.com.br/PauloPenalva/Java_MDFe</url>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <url>https://github.com/PauloPenalva/Java_MDFe.git</url>
+    <connection>scm:git:git@github.com:PauloPenalva/Java_MDFe.git</connection>
+    <developerConnection>scm:git:git@github.com:PauloPenalva/Java_MDFe.git</developerConnection>
+    <tag>java-mdfe</tag>
+  </scm>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,8 +33,56 @@
     <jaxb2.version>2.3.1</jaxb2.version>
   </properties>
 
-  <dependencies>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>sonatype-nexus</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>sonatype-nexus</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+    </repository>
+  </distributionManagement>
 
+  <developers>
+    <developer>
+      <id>PauloPenalva</id>
+      <name>Paulo Rogerio Penalva</name>
+      <url>https://github.com/PauloPenalva</url>
+    </developer>
+  </developers>
+
+  <profiles>
+    <profile>
+      <id>assembly</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>3.1.1</version>
+            <configuration>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+              <appendAssemblyId>false</appendAssemblyId>
+            </configuration>
+            <executions>
+              <execution>
+                <id>make-assembly</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+  <dependencies>
     <dependency>
       <groupId>br.com.swconsultoria</groupId>
       <artifactId>java_certificado</artifactId>
@@ -147,11 +209,9 @@
         <configuration>
           <source>${java.version}</source>
           <target>${java.version}</target>
-<!--          <optimize>true</optimize>-->
           <debug>false</debug>
         </configuration>
       </plugin>
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
@@ -164,6 +224,27 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.13</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>sonatype-nexus</serverId>
+          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <pushChanges>false</pushChanges>
+          <localCheckout>true</localCheckout>
+        </configuration>
       </plugin>
 
       <plugin>
