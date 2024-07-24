@@ -15,3 +15,8 @@ Para Iniciar :
   <version>3.0</version>
 </dependency>
 ```
+
+# Historico de Versões
+
+## v3.0.0 - 24/07/2024 - Schemas NT 2024.002
+- Versão Inicial Do Sistema
