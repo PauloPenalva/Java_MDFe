@@ -84,7 +84,6 @@ public class TesteEnvioMdfe {
         infMDFe.setTot(preencheObjetoTot());
         infMDFe.getAutXML().add(preencheObjetoAutXML());
         infMDFe.setInfAdic(preencheObjetoInfAdic());
-
         infMDFe.setInfRespTec(preencheObjetoRespTec());
 
         TMDFe mdfe = new TMDFe();
