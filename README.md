@@ -2,7 +2,7 @@
 Biblioteca Java para consumo do WebService de MDF-e, baseada no projeto (https://github.com/Samuel-Oliveira/Java_NFe)
 
 Para Iniciar : 
-- Baixe o Schemas.rar (https://github.com/PauloPenalva/Java_MDFe/raw/master/schemas.zip) e extraia na sua Máquina.
+- Baixe o Schemas.rar (https://github.com/PauloPenalva/Java_MDFe/raw/main/schemas.zip) e extraia na sua Máquina.
 
 - External Jar: Baixe e adicione às bibliotecas de seu Projeto.
   - https://github.com/PauloPenalva/Java_MDFe/releases
