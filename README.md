@@ -12,7 +12,7 @@ Para Iniciar :
 <dependency>
   <groupId>br.com.idxtec</groupId>
   <artifactId>java_mdfe</artifactId>
-  <version>3.0</version>
+  <version>3.0.3</version>
 </dependency>
 ```
 
