@@ -58,7 +58,7 @@ public class TesteEvCancMdfe {
             evento.setInfEvento(infEvento);
             evento.setVersao(ConstantesUtil.VERSAO.MDFE);
 
-            TRetEvento retorno = CancelarMDFe.eventoCancelamento(config, evento, true);
+            TRetEvento retorno = Mdfe.eventoCancelar(config, evento);
 
             log.info("Status: " + retorno.getInfEvento().getCStat());
             log.info("Motivo: " + retorno.getInfEvento().getXMotivo());

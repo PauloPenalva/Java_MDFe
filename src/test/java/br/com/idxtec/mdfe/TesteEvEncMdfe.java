@@ -60,7 +60,7 @@ public class TesteEvEncMdfe {
             evento.setInfEvento(infEvento);
             evento.setVersao(ConstantesUtil.VERSAO.MDFE);
 
-            TRetEvento retorno = EncerrarMDFe.eventoEncerramento(config, evento, true);
+            TRetEvento retorno = Mdfe.eventoEncerramento(config, evento);
 
             if (StatusMdfeEnum.EVENTO_VINCULADO.getCodigo().equals(retorno.getInfEvento().getCStat())) {
                 log.info("Status: " + retorno.getInfEvento().getCStat());

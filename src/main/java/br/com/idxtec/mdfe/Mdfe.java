@@ -1,11 +1,14 @@
 package br.com.idxtec.mdfe;
 
 import br.com.idxtec.mdfe.dom.ConfiguracoesMdfe;
+import br.com.idxtec.mdfe.eventos.CancelarMDFe;
+import br.com.idxtec.mdfe.eventos.EncerrarMDFe;
 import br.com.idxtec.mdfe.exceptions.MdfeException;
 import br.com.idxtec.mdfe.schemas.consultaNaoEncerrado.TRetConsMDFeNaoEnc;
 import br.com.idxtec.mdfe.schemas.consultaSituacao.TRetConsSitMDFe;
 import br.com.idxtec.mdfe.schemas.consultaStatus.TRetConsStatServ;
-import br.com.idxtec.mdfe.schemas.recepcao.TEnviMDFe;
+import br.com.idxtec.mdfe.schemas.eventos.TEvento;
+import br.com.idxtec.mdfe.schemas.eventos.TRetEvento;
 import br.com.idxtec.mdfe.schemas.recepcao.TMDFe;
 import br.com.idxtec.mdfe.schemas.recepcao.TRetMDFe;
 import br.com.idxtec.mdfe.util.ConfiguracoesUtil;
@@ -38,4 +41,15 @@ public class Mdfe {
 
         return ConsultaStatus.consulta(ConfiguracoesUtil.iniciaConfiguracoes(configuracoesMdfe));
     }
+
+    public static TRetEvento eventoEncerramento(ConfiguracoesMdfe configuracoesMdfe, TEvento envEvento) throws MdfeException {
+
+        return EncerrarMDFe.eventoEncerramento(ConfiguracoesUtil.iniciaConfiguracoes(configuracoesMdfe), envEvento, true);
+    }
+
+    public static TRetEvento eventoCancelar(ConfiguracoesMdfe configuracoesMdfe, TEvento envEvento) throws MdfeException {
+
+        return CancelarMDFe.eventoCancelamento(ConfiguracoesUtil.iniciaConfiguracoes(configuracoesMdfe), envEvento, true);
+    }
+
 }

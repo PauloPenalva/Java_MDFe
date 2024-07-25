@@ -4,7 +4,7 @@
 
   <groupId>br.com.idxtec</groupId>
   <artifactId>java_mdfe</artifactId>
-  <version>3.0</version>
+  <version>3.0.3</version>
   <packaging>jar</packaging>
   <name>Java MDFe</name>
   <url>http://github.com.br/PauloPenalva/Java_MDFe</url>
